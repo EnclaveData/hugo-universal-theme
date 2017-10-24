@@ -35,9 +35,10 @@ function map () {
       ]
 
     var map = new GMaps({
-      el: '#map',
-      lat: lat,
-      lng: lng,
+	el: '#map',
+	lat: lat,
+	lng: lng,
+	zoomOut: 3,
       zoomControl: true,
       zoomControlOpt: {
         style: 'SMALL',

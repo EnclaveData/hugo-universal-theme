@@ -1,16 +1,30 @@
 <div class="container" id="contact">
+  <div class="row">
+    <div class="col-md-6">
 
-    <div class="row">
-        <div class="col-md-8">
+      {{ if isset .Site.Params "address" }}
 
+      <div class="heading" >
+	<h3 class="text-uppercase"> {{ i18n "contactAddrTitle" }}</h3>
+      </div>
+
+      {{ .Site.Params.address | safeHTML }}
+      {{ end }}
+    </div>
+	
+    <div class="col-md-6">
+      <div class="heading">
+	<h3>Map</h3>
+      </div>
+	{{ partial "map.html" . }}
+    </div>
+  </div>
+
+  <div class="col-md-12">
             <section>
-
-                {{ .Content }}
-
-                {{ if isset .Site.Params "email" }}
-
+              {{ if isset .Site.Params "email" }}
                 <div class="heading">
-                  <h3>{{ i18n "contactForm" }}</h3>
+                  <h3>Contact Us</h3>
                 </div>
 
                 <div id="contact-message"></div>
@@ -48,25 +62,10 @@
 
             </section>
 
-        </div>
+	</div>
+  
 
-        <div class="col-md-4">
-
-            {{ if isset .Site.Params "address" }}
-            <section>
-
-              <h3 class="text-uppercase"> {{ i18n "contactAddrTitle" }}</h3>
-
-                {{ .Site.Params.address | safeHTML }}
-
-            </section>
-
-            {{ end }}
-
-        </div>
-
-    </div>
-    <!-- /.row -->
 </div>
+    <!-- /.row -->
 
-{{ partial "map.html" . }}
+
