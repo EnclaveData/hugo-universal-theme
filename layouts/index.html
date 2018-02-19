@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
 
@@ -9,7 +9,8 @@
 
         <header>
 
-	  {{ partial "top-header.html" . }}
+      	  {{ partial "top-header.html" . }}
+          {{ partial "top.html" . }}
 
           {{ partial "nav.html" . }}
 
